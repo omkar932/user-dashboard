@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { fetchUsers } from "./api";
+import { useUsers } from "./hooks/useUsers";
+import { User } from "./types/user";
+import UserList from "./components/UserList";
+import UserDetails from "./components/UserDetails";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { users } = useUsers(fetchUsers);
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+  const [activeTab, setActiveTab] = useState<"profile" | "contact">("profile");
+
+  const handleSelect = (user: User) => {
+    setSelectedUser(user);
+    setActiveTab("profile");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{ display: "flex", height: "100vh", fontFamily: "sans-serif" }}>
+      <UserList
+        users={users}
+        selectedUserId={selectedUser?.id || null}
+        onSelect={handleSelect}
+      />
+
+      <UserDetails
+        user={selectedUser}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
+      />
+    </div>
+  );
 }
 
-export default App
+export default App;
