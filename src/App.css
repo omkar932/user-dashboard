@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.app {
+  display: flex;
+  height: 100vh;
+  font-family: system-ui, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.user-list {
+  width: 30%;
+  border-right: 1px solid #e5e7eb;
+  padding: 12px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-item {
+  padding: 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  border-radius: 6px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.user-item:hover {
+  background: #f1f5f9;
 }
 
-.card {
-  padding: 2em;
+.user-item.active {
+  background: #eef2ff;
+  font-weight: 500;
 }
 
-.read-the-docs {
-  color: #888;
+.user-details {
+  width: 70%;
+  padding: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.user-details {
+  width: 70%;
+  padding: 20px;
+}
+
+.user-empty {
+  width: 70%;
+  padding: 20px;
+  color: #6b7280;
+}
+
+.user-name {
+  margin-bottom: 8px;
+}
+
+.user-section p {
+  margin: 6px 0;
+}
+
+.divider {
+  margin: 16px 0;
+  border: none;
+  border-top: 1px solid #e5e7eb;
 }

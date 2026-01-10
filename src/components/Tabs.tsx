@@ -5,7 +5,7 @@ interface Props {
 
 const Tabs = ({ active, onChange }: Props) => {
   return (
-    <div style={{ display: "flex", gap: 10, marginBottom: 16 }}>
+    <div className="tabs">
       <button
         disabled={active === "profile"}
         onClick={() => onChange("profile")}

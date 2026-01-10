@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { fetchUsers } from "./api";
 import { useUsers } from "./hooks/useUsers";
-import { User } from "./types/user";
+import type { User } from "./types/user";
 import UserList from "./components/UserList";
 import UserDetails from "./components/UserDetails";
+import "./app.css";
 
 function App() {
   const { users } = useUsers(fetchUsers);
