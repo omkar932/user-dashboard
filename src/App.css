@@ -1,13 +1,14 @@
-.app {
-  display: flex;
+.app-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr 220px;
   height: 100vh;
   font-family: system-ui, sans-serif;
 }
 
 .user-list {
-  width: 30%;
   border-right: 1px solid #e5e7eb;
   padding: 12px;
+  overflow-y: auto;
 }
 
 .user-item {
@@ -26,38 +27,90 @@
   font-weight: 500;
 }
 
-.user-details {
-  width: 70%;
-  padding: 20px;
-}
-
-.tabs {
+.pagination {
   display: flex;
-  gap: 10px;
-  margin-bottom: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
 }
 
-.actions {
-  display: flex;
-  gap: 10px;
+.pagination button {
+  padding: 4px 10px;
+  cursor: pointer;
 }
+
 .user-details {
-  width: 70%;
   padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-.user-empty {
-  width: 70%;
-  padding: 20px;
+.user-details.empty {
   color: #6b7280;
 }
 
+.user-details-layout {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  height: 100%;
+}
+
+.user-tabs {
+  border-right: 1px solid #e5e7eb;
+  padding-right: 12px;
+}
+
+.user-content {
+  padding-left: 12px;
+}
+
 .user-name {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .user-section p {
   margin: 6px 0;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tabs button {
+  text-align: left;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #eef2ff;
+  font-weight: 500;
+}
+
+.actions-panel {
+  border-left: 1px solid #e5e7eb;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actions-panel.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 14px;
 }
 
 .divider {

@@ -1,23 +1,28 @@
+import "../App.css";
+type TabKey = "profile" | "contact";
+
+const TABS: { key: TabKey; label: string }[] = [
+  { key: "profile", label: "Profile" },
+  { key: "contact", label: "Contact" },
+];
+
 interface Props {
-  active: "profile" | "contact";
-  onChange: (tab: "profile" | "contact") => void;
+  active: TabKey;
+  onChange: (tab: TabKey) => void;
 }
 
 const Tabs = ({ active, onChange }: Props) => {
   return (
     <div className="tabs">
-      <button
-        disabled={active === "profile"}
-        onClick={() => onChange("profile")}
-      >
-        Profile
-      </button>
-      <button
-        disabled={active === "contact"}
-        onClick={() => onChange("contact")}
-      >
-        Contact
-      </button>
+      {TABS.map((tab) => (
+        <button
+          key={tab.key}
+          className={active === tab.key ? "active" : ""}
+          onClick={() => onChange(tab.key)}
+        >
+          {tab.label}
+        </button>
+      ))}
     </div>
   );
 };
