@@ -4,7 +4,7 @@ This project is a simple user dashboard built as part of a technical assessment.
 
 ---
 
-## 🚀 Tech Stack
+# Tech Stack
 
 - React JS
 - TypeScript
@@ -14,7 +14,7 @@ This project is a simple user dashboard built as part of a technical assessment.
 
 ---
 
-## 📌 Features
+# Features
 
 - User list displayed in the left panel
 - User details loaded when a user is selected
@@ -27,7 +27,7 @@ This project is a simple user dashboard built as part of a technical assessment.
 
 ---
 
-## 📂 Project Structure
+# Project Structure
 
 src/
 api/
@@ -38,7 +38,7 @@ main.tsx
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
 1. Clone the repository
 
